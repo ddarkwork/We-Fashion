@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -14,4 +14,18 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}
+
+@extends("layouts.admin_structure")
+
+@section("description")
+    <span>La page de création de produits</span>
+@endsection
+
+@section("title")
+    Page de création de produits - We Fashion
+@endsection
+
+@section("content")
+    <h1>Page de création de produits</h1>
+@endsection
