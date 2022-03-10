@@ -27,5 +27,5 @@
 @endsection
 
 @section("content")
-    <h1>Page de création de produits</h1>
+    <h1>Page d'administration</h1>
 @endsection

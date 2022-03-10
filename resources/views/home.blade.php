@@ -1,4 +1,4 @@
-@extends("layouts.structure")
+@extends("layouts.user_structure")
 
 @section("description")
     <span>La page d'accueil de la boutique WE Fashion</span>

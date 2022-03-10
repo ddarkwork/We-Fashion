@@ -1,4 +1,4 @@
-@extends("layouts.structure")
+@extends("layouts.user_structure")
 
 @section("description")
     <span>Liste des articles en solde</span>
