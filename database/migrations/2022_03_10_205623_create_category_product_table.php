@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryProductPivotTable extends Migration
+class CreateCategoryProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +14,10 @@ class CreateCategoryProductPivotTable extends Migration
     public function up()
     {
         Schema::create('category_product', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->index();
-            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
-            $table->unsignedBigInteger('product_id')->index();
-            $table->foreign('product_id')->references('id')->on('product')->onDelete('cascade');
-            $table->primary(['category_id', 'product_id']);
+            $table->id();
+            $table->foreignId('product_id')->constrained();
+            $table->foreignId('category_id')->constrained();
+            $table->timestamps();
         });
     }
 
