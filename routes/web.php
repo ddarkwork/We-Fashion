@@ -51,6 +51,9 @@ require __DIR__.'/auth.php';
 // Route vers la page de création d'un nouveau produit
 Route::get("/create_product", [ProductController::class, "create_product"]) -> name("create_product");
 
+// Route vers la page de traitement produits (users)
+Route::post("/create_product", [ProductController::class, "store_product"]) -> name("store_product");
+
 /***************************************************************************
 **************************** END ROUTES (ADMIN) ****************************
 ***************************************************************************/

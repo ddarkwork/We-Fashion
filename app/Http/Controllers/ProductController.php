@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -16,6 +17,7 @@ class ProductController extends Controller
             "women",
             "products",
             "create_product",
+            "store_product",
             "admin"
         ]);
     }
@@ -51,12 +53,28 @@ class ProductController extends Controller
     }
 
     public function admin() {
-        return view("/dashboard");
+        $products = Post::all();
+        return view("/dashboard", ["products" => $products]);
     }
 
     // Route page création de produit
     public function create_product()
     {
         return view("/create_product");
+    }
+
+    // Route page traitement produit
+    public function store_product(Request $request)
+    {
+        Product::create([
+            "name" => $request -> name,
+            "description" => $request -> description,
+            "price" => $request -> price,
+            "size" => $request->input('size'),
+            "reference" => $request -> reference,
+            "status" => $request -> status,
+            "visibility" => $request -> visibility
+        ]);
+        dd("Votre article a bien été créé !");
     }
 }
