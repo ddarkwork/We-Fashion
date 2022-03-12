@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         $this -> middleware("auth") -> except([
             "index",
-            "sales",
+            "sold",
             "showSex",
             //"men",
             //"women",
@@ -33,15 +33,12 @@ class ProductController extends Controller
 
     public function showSex(string $name){
         $category = Category::where('sex', $name)->get();
-        
         $products = [];
         // Pour récuperez le premier id de chaque categorie.
         if(count($category) > 0) {
             $products = $category[0]->products;
         }
-
-        return view("men", ['products' => $products,'category' => $category]);
-    
+        return view("index", ['products' => $products,'category' => $category]);
     }
 
     // Route page produit
@@ -50,10 +47,9 @@ class ProductController extends Controller
     //     return view("product");
     // }
 
-    // public function admin() {
-    //     dd($request->all());
-    //     return view("dashboard");
-    // }
+    public function admin() {
+        return view("dashboard");
+    }
 
     // Route page création de produit
     // public function create_product()

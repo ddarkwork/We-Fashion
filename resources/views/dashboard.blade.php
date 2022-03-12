@@ -1,33 +1,13 @@
- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> 
-
-{{-- @extends("layouts.admin_structure")
+@extends("layouts.admin_structure")
 
 @section("description")
-    <span>La page de création de produits</span>
+    <span>Tableau de bord de la booutique We fashion</span>
 @endsection
 
 @section("title")
-    Page de création de produits - We Fashion
+    Tableau de bord - We Fashion
 @endsection
 
-@section("content")
-    <h1>Page d'administration</h1>
-    {{-- Afficher le nom --}}
-    {{-- {{ $products }}
-@endsection --}} 
+@section('content')
+    <h1>Tableau de bord</h1>
+@endsection

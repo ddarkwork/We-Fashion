@@ -26,7 +26,7 @@
 
 /* BEGIN CSS BODY */
 .d-flex {
-    padding-top: 5px;
+    padding-top: 0px;
 }
 
 .welcome_msg {
@@ -53,6 +53,8 @@ footer {
 
 .footer_title {
     margin-bottom: 1.5625rem;
+    font-size: 1.2rem;
+    text-decoration: underline;
 }
 
 .col {
@@ -62,6 +64,8 @@ footer {
 .col-4 {
     margin-bottom: 2%;
     text-align: center;
+    border: 1px solid black;
+    padding: 25px;
 }
 
 ul {

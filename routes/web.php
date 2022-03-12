@@ -26,7 +26,7 @@ Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::get('products', [ProductController::class, 'index'])->name('sold');
 
-Route::get('sex/{name}', [ProductController::class, 'showSex'])->name('sex');
+Route::get('/sex/{name}', [ProductController::class, 'showSex'])->name('sex');
 
 /***************************************************************************
 **************************** END ROUTES (USERS) ****************************
