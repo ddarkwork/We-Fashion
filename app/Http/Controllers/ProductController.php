@@ -6,6 +6,7 @@ use App\Models\Picture;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,9 @@ class ProductController extends Controller
     }
 
     public function index() {
-        return view('home',['products' => Product::all()]);
+
+        $product=DB::table('products')->simplePaginate(6);
+        return view('home', ['products' => $product]);
     }
 
     public function showSex(string $name){
