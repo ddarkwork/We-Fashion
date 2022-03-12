@@ -1,0 +1,92 @@
+/* BEGIN CSS NAVBAR */
+.collapse {
+    margin-top: 17px;
+}
+
+.nav_item {
+    color: white;
+    margin-left: 1.5625rem;
+    font-size: 1.05rem;
+}
+
+.nav_item:hover {
+    color: gray;
+}
+
+.logo {
+    font-size: 1.875rem;
+    text-decoration: none;
+    font-family: 'BioRhyme', serif;
+}
+
+.btn-outline-success:hover {
+    background-color: #66eb9a;
+}
+/* END CSS NAVBAR */
+
+/* BEGIN CSS BODY */
+.d-flex {
+    padding-top: 5px;
+}
+
+.welcome_msg {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.page-link {
+    color:#66eb9a; 
+}
+
+.page-link:hover {
+    color:#66eb9a; 
+}
+/* END CSS BODY */
+
+/* BEGIN CSS BODY */
+footer {
+    background-color: #212529;
+    color: white;
+    padding: 3.125rem 0 3.125rem 0;
+}
+
+.footer_title {
+    margin-bottom: 1.5625rem;
+}
+
+.col {
+    margin-left: 5%;
+}
+
+.col-4 {
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+div ul li {
+    list-style-type: none;
+    list-style: none;
+    margin-bottom: 0.625rem;
+}
+
+div ul li a {
+    text-decoration: none;
+}
+
+.footer_link {
+    color: white;
+}
+
+.footer_link:hover {
+    color: gray;
+}
+
+#copyright {
+    text-align: center;
+}
+/* END CSS BODY */
