@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,10 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string("category");
+            $table->string('name', 100);
+            $table->string('description' , 100);
+            $table->enum('sex', ['homme', 'femme']);
+            $table->enum('condition', ['sold', 'standard']);
             $table->timestamps();
         });
     }
@@ -29,4 +32,4 @@ class CreateCategoriesTable extends Migration
     {
         Schema::dropIfExists('categories');
     }
-}
+};

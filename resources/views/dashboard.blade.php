@@ -1,4 +1,4 @@
-{{-- <x-app-layout>
+ <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -14,9 +14,9 @@
             </div>
         </div>
     </div>
-</x-app-layout> --}}
+</x-app-layout> 
 
-@extends("layouts.admin_structure")
+{{-- @extends("layouts.admin_structure")
 
 @section("description")
     <span>La page de création de produits</span>
@@ -28,4 +28,6 @@
 
 @section("content")
     <h1>Page d'administration</h1>
-@endsection
+    {{-- Afficher le nom --}}
+    {{-- {{ $products }}
+@endsection --}} 

@@ -18,20 +18,15 @@ use App\Http\Controllers\ProductController;
 *************************** BEGIN ROUTES (USERS) ***************************
 ***************************************************************************/
 
-// Route vers la page d'accueil (users)
-Route::get("/", [ProductController::class, "index"]) -> name("home");
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-// Route vers la page soldes (users)
-Route::get("/sales", [ProductController::class, "sales"]) -> name("sales");
+Route::get('/', [ProductController::class, 'index'])->name('home');
 
-// Route vers la page Homme (users)
-Route::get("/men", [ProductController::class, "men"]) -> name("men");
+Route::get('products', [ProductController::class, 'index'])->name('sold');
 
-// Route vers la page Femme (users)
-Route::get("/women", [ProductController::class, "women"]) -> name("women");
-
-// Route vers la page détails produits (users)
-Route::get("/product", [ProductController::class, "product"]) -> name("product");
+Route::get('sex/{name}', [ProductController::class, 'showSex'])->name('sex');
 
 /***************************************************************************
 **************************** END ROUTES (USERS) ****************************
@@ -44,15 +39,15 @@ Route::get("/product", [ProductController::class, "product"]) -> name("product")
 ***************************************************************************/
 
 // Route vers le dashborad auth
-Route::get("/admin", [ProductController::class, "admin"]) -> name("admin");
+Route::get("admin", [ProductController::class, "admin"]) -> name("admin");
 
 require __DIR__.'/auth.php';
 
 // Route vers la page de création d'un nouveau produit
-Route::get("/create_product", [ProductController::class, "create_product"]) -> name("create_product");
+Route::get("create_product", [ProductController::class, "create_product"]) -> name("create_product");
 
 // Route vers la page de traitement produits (users)
-Route::post("/create_product", [ProductController::class, "store_product"]) -> name("store_product");
+Route::post("create_product", [ProductController::class, "store_product"]) -> name("store_product");
 
 /***************************************************************************
 **************************** END ROUTES (ADMIN) ****************************

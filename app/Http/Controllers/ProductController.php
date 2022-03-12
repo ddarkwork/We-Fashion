@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Picture;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,68 +15,60 @@ class ProductController extends Controller
         $this -> middleware("auth") -> except([
             "index",
             "sales",
-            "men",
-            "women",
+            "showSex",
+            //"men",
+            //"women",
             "products",
-            "create_product",
             "store_product",
             "admin"
         ]);
     }
 
-    // Route home index
-    public function index()
-    {
-        return view("/home");
+    public function index() {
+        return view('home',['products' => Product::all()]);
     }
 
-    // Route page soldes
-    public function sales()
-    {
-        return view("/sales");
-    }
+    public function showSex(string $name){
+        $category = Category::where('sex', $name)->get();
+        
+        $products = [];
+        // Pour récuperez le premier id de chaque categorie.
+        if(count($category) > 0) {
+            $products = $category[0]->products;
+        }
 
-    // Route page articles hommes
-    public function men()
-    {
-        return view("/men");
-    }
-
-    // Route page articles femmes
-    public function women()
-    {
-        return view("/women");
+        return view("men", ['products' => $products,'category' => $category]);
+    
     }
 
     // Route page produit
-    public function product()
-    {
-        return view("/product");
-    }
+    // public function products()
+    // {
+    //     return view("product");
+    // }
 
-    public function admin() {
-        $products = Post::all();
-        return view("/dashboard", ["products" => $products]);
-    }
+    // public function admin() {
+    //     dd($request->all());
+    //     return view("dashboard");
+    // }
 
     // Route page création de produit
-    public function create_product()
-    {
-        return view("/create_product");
-    }
+    // public function create_product()
+    // {
+    //     return view("create_product");
+    // }
 
-    // Route page traitement produit
-    public function store_product(Request $request)
-    {
-        Product::create([
-            "name" => $request -> name,
-            "description" => $request -> description,
-            "price" => $request -> price,
-            "size" => $request->input('size'),
-            "reference" => $request -> reference,
-            "status" => $request -> status,
-            "visibility" => $request -> visibility
-        ]);
-        dd("Votre article a bien été créé !");
-    }
+    // // Route page traitement produit
+    // public function store_product(Request $request)
+    // {
+    //     $products = Product::create([
+    //         "name" => $request->name,
+    //         "description" => $request->description,
+    //         "size" => $request->size,
+    //         "reference" => $request->reference,
+    //         "status" => $request->status,
+    //         "visibility" => $request->visibility,
+    //         "price" => $request->price
+    //     ]);
+    // }
 }

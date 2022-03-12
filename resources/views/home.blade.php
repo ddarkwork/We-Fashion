@@ -8,6 +8,21 @@
     Page d'accueil - We Fashion
 @endsection
 
-@section("content")
-    <h1>Page d'accueil</h1>
+@section('content')
+
+<h1>Bienvenue sur We Fashion</h1>
+
+@foreach($products as $product)
+
+<ul>
+    <li>{{$product->name}}</li>
+    <li>{{$product->price}}</li>
+    <li>{{$product->description}}</li>
+    <li>{{$product->visibility}}</li>
+    <li>{{$product->condition}}</li>
+    <li>{{$product->reference}}</li>
+</ul>
+
+@endforeach
+
 @endsection

@@ -29,8 +29,8 @@
             <label for="">Catégorie du produit</label><br>
             <select name="category">
                 <option value="">---</option>
-                <option value="men">Hommes</option>
-                <option value="women">Femmes</option>
+                <option value="men"></option>
+                <option value="women"></option>
             </select>
         </div><br>
 
@@ -83,7 +83,7 @@
 
         {{-- Upload d'image du produit --}}
         <div>
-            <input type="file" name="picture">
+            <input type="file" name="path">
         </div><br>
 
         <button type="submit">Enregistrer le produit</button>

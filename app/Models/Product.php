@@ -15,13 +15,13 @@ class Product extends Model
     protected $fillable = ["name", "description", "price", "size", "reference", "status", "visibility"];
 
     // Lier les tables Products et Categories
-    public function Categories() 
+    public function categories() 
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     // Lier les tables Products et Picture
-    public function image()
+    public function picture()
     {
         return $this->hasOne(Picture::class);
     }

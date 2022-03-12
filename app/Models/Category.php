@@ -10,6 +10,9 @@ class Category extends Model
 {
     use HasFactory;
 
+    // Autoriser le passage de données 
+    protected $fillable = ["category"];
+
     // Lier les tables Products et Categories
     public function products() {
         return $this->belongsTo(Product::class);
