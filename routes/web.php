@@ -49,10 +49,16 @@ Route::get("create_product", [ProductController::class, "create_product"]) -> na
 // Route vers la page de traitement produits (users)
 Route::post("create_product", [ProductController::class, "store_product"]) -> name("store_product");
 
+// Route vers la page de création de catégorie produit
+Route::get("create_category", [ProductController::class, "create_category"]) -> name("create_category");
+
+// Route vers la page de création de catégorie produit
+Route::post("store_category", [ProductController::class, "store_category"]) -> name("store_category");
+
 /***************************************************************************
 **************************** END ROUTES (ADMIN) ****************************
 ***************************************************************************/
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

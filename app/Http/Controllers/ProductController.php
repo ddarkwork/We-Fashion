@@ -22,6 +22,7 @@ class ProductController extends Controller
             "create_product",
             "products",
             "store_product",
+            "create_category",
             "admin"
         ]);
     }
@@ -60,17 +61,23 @@ class ProductController extends Controller
         return view("create_product", compact("products"));
     }
 
-    // // Route page traitement produit
-    // public function store_product(Request $request)
-    // {
-    //     $products = Product::create([
-    //         "name" => $request->name,
-    //         "description" => $request->description,
-    //         "size" => $request->size,
-    //         "reference" => $request->reference,
-    //         "status" => $request->status,
-    //         "visibility" => $request->visibility,
-    //         "price" => $request->price
-    //     ]);
-    // }
+    // Route page traitement produit
+    public function store_product(Request $request)
+    {
+        $products = Product::create([
+            "name" => $request->name,
+            "description" => $request->description,
+            //"size" => $request->size,
+            "reference" => $request->reference,
+            "status" => $request->status,
+            "visibility" => $request->visibility,
+            "price" => $request->price
+        ]);
+    }
+
+    // Route page création de catégorie
+    public function create_category() 
+    {
+        return view("create_category");
+    }
 }

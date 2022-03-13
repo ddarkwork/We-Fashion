@@ -16,7 +16,7 @@
               </li>
             </ul>
             <div class="d-flex">
-              <a class="nav-link active" aria-current="page" href="#"><span class="nav_item">Partie client</span></a>
+              <a class="nav-link active" aria-current="page" href="{{ route("home") }}"><span class="nav_item">Partie client</span></a>
             </div>
           </div>
         </div>
