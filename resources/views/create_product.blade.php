@@ -30,16 +30,16 @@ Page de création de produits - We Fashion
         <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
                 <option selected disabled>Cliquez pour sélectionner l'état du produit</option>
-              <option value="">Sold</option>
-              <option value="">Standard</option>
+              <option value="sold">Sold</option>
+              <option value="standard">Standard</option>
             </select>
             <label for="floatingSelect">Sélectionnez l'état du produit</label>
         </div>
         <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="visibility">
               <option selected disabled>Cliquez pour sélectionner la visibilité du produit</option>
-              <option value="1">publié</option>
-              <option value="2">non publié</option>
+              <option value="publié">publié</option>
+              <option value="non publié">non publié</option>
             </select>
             <label for="floatingSelect">Sélectionnez la visibilité du produit</label>
         </div>
