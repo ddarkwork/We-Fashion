@@ -17,7 +17,6 @@
     @include("components.admin_navbar")
     @yield("content")
 </body>
-<hr>
 <footer>
     @include("components.footer")
 </footer>

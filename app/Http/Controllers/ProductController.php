@@ -56,7 +56,8 @@ class ProductController extends Controller
     // Route page création de produit
     public function create_product()
     {
-        return view("create_product");
+        $products = Product::all();
+        return view("create_product", compact("products"));
     }
 
     // // Route page traitement produit
