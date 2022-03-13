@@ -19,6 +19,7 @@ class ProductController extends Controller
             "showSex",
             //"men",
             //"women",
+            "create_product",
             "products",
             "store_product",
             "admin"
@@ -53,10 +54,10 @@ class ProductController extends Controller
     }
 
     // Route page création de produit
-    // public function create_product()
-    // {
-    //     return view("create_product");
-    // }
+    public function create_product()
+    {
+        return view("create_product");
+    }
 
     // // Route page traitement produit
     // public function store_product(Request $request)

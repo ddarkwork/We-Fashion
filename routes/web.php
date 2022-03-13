@@ -52,3 +52,7 @@ Route::post("create_product", [ProductController::class, "store_product"]) -> na
 /***************************************************************************
 **************************** END ROUTES (ADMIN) ****************************
 ***************************************************************************/
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
