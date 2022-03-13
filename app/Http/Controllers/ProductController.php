@@ -27,7 +27,8 @@ class ProductController extends Controller
 
     public function index() {
 
-        $product=DB::table('products')->simplePaginate(6);
+        //$product=DB::table('products')->simplePaginate(6);
+        $product = Product::paginate(6);
         return view('home', ['products' => $product]);
     }
 

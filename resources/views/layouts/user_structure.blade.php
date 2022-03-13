@@ -16,7 +16,6 @@
     {{-- Navbar --}}
     @include("components.user_navbar")
     @yield("content")
-    @include("components.pagination")
 </body>
 <footer>
     @include("components.footer")
