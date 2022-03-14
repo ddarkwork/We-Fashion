@@ -28,8 +28,6 @@ class ProductController extends Controller
     }
 
     public function index() {
-
-        //$product=DB::table('products')->simplePaginate(6);
         $product = Product::paginate(6);
         return view('home', ['products' => $product]);
     }
@@ -37,11 +35,12 @@ class ProductController extends Controller
     public function showSex(string $name){
         $category = Category::where('sex', $name)->get();
         $products = [];
+        $sex = $name;
         // Pour récuperez le premier id de chaque categorie.
         if(count($category) > 0) {
             $products = $category[0]->products;
         }
-        return view("index", ['products' => $products,'category' => $category]);
+        return view("index", ['products' => $products,'category' => $category, "sex" => $sex]);
     }
 
     // Route page produit

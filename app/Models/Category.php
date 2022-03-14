@@ -15,6 +15,6 @@ class Category extends Model
 
     // Lier les tables Products et Categories
     public function products() {
-        return $this->belongsTo(Product::class);
+        return $this->belongsToMany(Product::class);
     }
 }

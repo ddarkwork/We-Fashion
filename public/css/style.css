@@ -25,6 +25,20 @@
 /* END CSS NAVBAR */
 
 /* BEGIN CSS BODY */
+body {
+    caret-color: #66eb9a;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #212529;
+    background: #66eb9a;
+  }
+  
+::selection {
+    color: #212529;
+    background: #66eb9a;
+}
+
 .d-flex {
     padding-top: 0px;
 }
