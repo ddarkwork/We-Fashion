@@ -10,7 +10,8 @@ Page de création de catégories de produits - We Fashion
 
 @section('content')
 <div class="container" style="margin: 25px auto">
-    <form action="" method="post" enctype="multipart/form-data" style="height: 355px ; padding-top: 50px">
+    <form action="" method="post" enctype="multipart/form-data" style="height: 355px ;">
+        <h1 class="welcome_msg col-10">Créer un nouvelle catégorie</h1>
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput" placeholder="Entrez le nom du produit" name="name">
             <label for="floatingInput">Entrez le nom de la catégorie</label>
@@ -27,6 +28,10 @@ Page de création de catégories de produits - We Fashion
               <option value="femme">Femme</option>
             </select>
             <label for="floatingSelect">Sélectionnez le sexe concerné</label>
+        </div>
+        
+        <div class="d-grid gap-2" style="margin-top: 15px;">
+            <button class="btn btn-primary" type="button"><span>Créer la catégorie</span></button>
         </div>
 </form>
 </div>

@@ -56,6 +56,39 @@ body {
 .page-link:hover {
     color:#66eb9a; 
 }
+
+.btn {
+    background-color: #66eb9a;
+    border-color: #66eb9a;
+}
+
+.btn span {
+    color: #212529;
+    font-weight: 600;
+}
+
+.btn span:hover {
+    color: white;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #39c76f;
+    border: 1px solid #66eb9a;
+}
+
+.btn a {
+    text-decoration: none;
+}
+
+.btn a span {
+    color: #212529;
+    font-weight: 600;
+}
+
+.btn a span:hover {
+    color: white;
+}
 /* END CSS BODY */
 
 /* BEGIN CSS FOOTER */

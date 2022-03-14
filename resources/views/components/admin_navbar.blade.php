@@ -12,7 +12,7 @@
                 <a class="nav-link active" aria-current="page" href="{{ route("admin") }}"><span class="nav_item">Produits</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><span class="nav_item">Catégories</span></a>
+                <a class="nav-link active" aria-current="page" href="{{ route("create_category") }}"><span class="nav_item">Catégories</span></a>
               </li>
             </ul>
             <div class="d-flex">
