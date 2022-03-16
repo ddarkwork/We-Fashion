@@ -57,6 +57,7 @@ Tableau de bord - We Fashion
                 @endforeach
             </table>
         </form>
+        {{ $products->links() }}
     </div>
 </div>
 @endsection

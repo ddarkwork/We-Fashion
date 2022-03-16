@@ -50,7 +50,8 @@ class ProductController extends Controller
     // }
 
     public function admin() {
-        $products = Product::orderBy("name")->get();
+        // $products = Product::orderBy("name")->get();
+        $products = DB::table('products')->orderBy('name', 'asc')->paginate(6);
         return view("dashboard", compact("products"));
     }
 
