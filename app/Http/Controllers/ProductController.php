@@ -50,7 +50,8 @@ class ProductController extends Controller
     // }
 
     public function admin() {
-        return view("dashboard");
+        $products = Product::orderBy("name")->get();
+        return view("dashboard", compact("products"));
     }
 
     // Route page création de produit
@@ -72,6 +73,19 @@ class ProductController extends Controller
             "visibility" => $request->visibility,
             "price" => $request->price
         ]);
+
+        $validatedData = $request->validate([
+            "name" => $request->name,
+            "description" => $request->description,
+            //"size" => $request->size,
+            "reference" => $request->reference,
+            "status" => $request->status,
+            "visibility" => $request->visibility,
+            "price" => $request->price
+        ]);
+        $show = Product::create($validatedData);
+   
+        return redirect('admin')->with('success', 'Le produit a bien été enregistré !');
     }
 
     // Route page création de catégorie
@@ -79,4 +93,28 @@ class ProductController extends Controller
     {
         return view("create_category");
     }
+
+    // Route modification de produit
+    public function edit($id)
+    {
+        $products = Product::findOrFail($id);
+        return view('edit', compact('products'));
+    }
+
+    // Route update produit
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            "name" => $request->name,
+            "description" => $request->description,
+            //"size" => $request->size,
+            "reference" => $request->reference,
+            "status" => $request->status,
+            "visibility" => $request->visibility,
+            "price" => $request->price
+        ]);
+        Product::whereId($id)->update($validatedData);
+        return redirect('admin')->with('success', 'Le produit a bien été modifié !');
+    }    
+    
 }

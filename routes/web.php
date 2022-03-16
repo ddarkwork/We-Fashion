@@ -55,10 +55,16 @@ Route::get("create_category", [ProductController::class, "create_category"]) -> 
 // Route vers la page de création de catégorie produit
 Route::post("store_category", [ProductController::class, "store_category"]) -> name("store_category");
 
+// Route vers la page de modification de produit
+Route::get("edit_product", [ProductController::class, "edit_product"]) -> name("edit_product");
+
+// Route vers la page de traitement de la modification de produit
+//Route::post("edit_product", [ProductController::class, "edit_product"]) -> name("edit_product");
+
 /***************************************************************************
 **************************** END ROUTES (ADMIN) ****************************
 ***************************************************************************/
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
