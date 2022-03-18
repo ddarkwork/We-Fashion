@@ -23,7 +23,8 @@ class ProductController extends Controller
             "products",
             "store_product",
             "create_category",
-            "admin"
+            "admin",
+            "edit_product"
         ]);
     }
 
@@ -65,26 +66,16 @@ class ProductController extends Controller
     // Route page traitement produit
     public function store_product(Request $request)
     {
-        $products = Product::create([
-            "name" => $request->name,
-            "description" => $request->description,
-            //"size" => $request->size,
-            "reference" => $request->reference,
-            "status" => $request->status,
-            "visibility" => $request->visibility,
-            "price" => $request->price
-        ]);
-
         $validatedData = $request->validate([
-            "name" => $request->name,
-            "description" => $request->description,
-            //"size" => $request->size,
-            "reference" => $request->reference,
-            "status" => $request->status,
-            "visibility" => $request->visibility,
-            "price" => $request->price
+            "name" => 'required|min:5|max:100',
+            "description" => 'required|max:255',
+            //"size" => 'required',
+            "reference" => 'required|min:16|max:16',
+            "status" => 'required',
+            "visibility" => 'required',
+            "price" => 'required'
         ]);
-        $show = Product::create($validatedData);
+        $products = Product::create($validatedData);
    
         return redirect('admin')->with('success', 'Le produit a bien été enregistré !');
     }
@@ -96,7 +87,7 @@ class ProductController extends Controller
     }
 
     // Route modification de produit
-    public function edit($id)
+    public function edit_product($id)
     {
         $products = Product::findOrFail($id);
         return view('edit', compact('products'));

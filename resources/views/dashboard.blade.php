@@ -49,7 +49,7 @@ Tableau de bord - We Fashion
                         <td>{{$product->visibility}}</td>
                         <td>{{$product->price}}</td>
                         <td>
-                            <a class="btn btn-default btn-sm" style="margin-bottom: 10px;"> <span> Editer </span> </a>
+                            <a class="btn btn-default btn-sm" style="margin-bottom: 10px;" href="{{ route("edit_product") }}"> <span> Editer </span> </a>
                             <a class="btn btn-default btn-sm"> <span> Supprimer </span> </a> 
                         </td>
                     </tr>
