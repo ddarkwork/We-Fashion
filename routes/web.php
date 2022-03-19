@@ -50,8 +50,14 @@ Route::get("create_product", [ProductController::class, "create_product"]) -> na
 // Enregistrer un produit
 Route::post("store_product", [ProductController::class, "store_product"]) -> name("store_product");
 
-// Création d'une catégorie
+// Page des catégories
+Route::get("category", [ProductController::class, "category"]) -> name("category");
+
+// Page de création de catégorie
 Route::get("create_category", [ProductController::class, "create_category"]) -> name("create_category");
+
+// Page de création de catégorie
+Route::get("store_product", [ProductController::class, "store_product"]) -> name("store_product");
 
 // Enregistrement d'une catégorie
 Route::post("store_category", [ProductController::class, "store_category"]) -> name("store_category");

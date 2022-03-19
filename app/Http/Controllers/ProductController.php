@@ -21,7 +21,9 @@ class ProductController extends Controller
             "products",
             "product",
             "store_product",
+            "category",
             "create_category",
+            "store_product",
             "admin",
             "edit_product",
             "update",
@@ -77,7 +79,6 @@ class ProductController extends Controller
     public function store_product(Request $request)
     {
         $product = Product::create($request->all());
-        dd($product);
         return redirect('admin')->with('success', 'Le produit a bien été enregistré');
     }
 
@@ -108,6 +109,18 @@ class ProductController extends Controller
         $products = Product::findOrFail($id);
         $products->delete();
         return redirect('admin')->with('success', 'Le produit a bien été supprimé !');
+    }
+
+    // Page de catégories
+    public function category() {
+        $categories = DB::table('categories')->orderBy('name', 'asc')->paginate(6);
+        return view("category", compact("categories"));
+    }
+    // Enregistrer une nouvelle catégorie
+    public function store_category(Request $request)
+    {
+        $category = Category::create($request->all());
+        return redirect('admin')->with('success', 'Le produit a bien été enregistré');
     }
     
 }
