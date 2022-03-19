@@ -23,7 +23,8 @@ Tableau de bord - We Fashion
     
     <!-- LISTE DES PRODUITS -->
     <div class=col-md-12>
-        <form id="form-list-client">
+        <form id="form-list-client" action="" enctype="multipart/form-data">
+            @csrf
             <legend>Liste des produits</legend>
             <table class="table table-bordered table-condensed table-hover">
                 <thead>
@@ -49,8 +50,8 @@ Tableau de bord - We Fashion
                         <td>{{$product->visibility}}</td>
                         <td>{{$product->price}}</td>
                         <td>
-                            <a class="btn btn-default btn-sm" style="margin-bottom: 10px;" href="{{ route("edit_product") }}"> <span> Editer </span> </a>
-                            <a class="btn btn-default btn-sm"> <span> Supprimer </span> </a> 
+                            <a class="btn btn-default btn-sm" style="margin-bottom: 10px;" href="{{ route("edit_product", $product->id)}}"> <span> Editer </span> </a>
+                            <a class="btn btn-default btn-sm" href="{{ route("delete", $product->id) }}"> <span> Supprimer </span> </a> 
                         </td>
                     </tr>
                 </tbody>

@@ -11,7 +11,8 @@ Page de création de produits - We Fashion
 @section('content')
 <div class="container" style="margin: 25px auto">
     <h1 class="welcome_msg col-10">Créer un nouveau produit</h1>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{ route("store_product") }}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="form-floating mb-3 form">
             <input type="text" class="form-control" id="floatingInput" placeholder="Entrez le nom du produit" name="name">
             <label for="floatingInput">Entrez le nom du produit</label>
@@ -48,7 +49,7 @@ Page de création de produits - We Fashion
         <input type="file" class="form-control" id="floatingPassword">
         
         <div class="d-grid gap-2" style="margin-top: 15px;">
-            <button class="btn btn-primary" type="button"><span>Créer le produit</span></button>
+            <button class="btn btn-primary" type="submit"><span>Créer le produit</span></button>
         </div>
     </form>
 </div>

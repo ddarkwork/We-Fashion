@@ -24,31 +24,33 @@ class ProductController extends Controller
             "store_product",
             "create_category",
             "admin",
-            "edit_product"
+            "edit_product",
+            "update",
+            "delete"
         ]);
     }
 
-    public function index() {
+    public function index() 
+    {
         $product = Product::paginate(6);
         return view('home', ['products' => $product]);
+    }
+
+    public function sold() 
+    {
+        $products = DB::table('products')->where("condition", "=", "sold" )->paginate(6);
+        return view("sold", ['products' => $products]);
     }
 
     public function showSex(string $name){
         $category = Category::where('sex', $name)->get();
         $products = [];
         $sex = $name;
-        // Pour récuperez le premier id de chaque categorie.
         if(count($category) > 0) {
             $products = $category[0]->products;
         }
         return view("index", ['products' => $products,'category' => $category, "sex" => $sex]);
     }
-
-    // Route page produit
-    // public function products()
-    // {
-    //     return view("product");
-    // }
 
     public function admin() {
         // $products = Product::orderBy("name")->get();
@@ -97,16 +99,24 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            "name" => $request->name,
-            "description" => $request->description,
-            //"size" => $request->size,
-            "reference" => $request->reference,
-            "status" => $request->status,
-            "visibility" => $request->visibility,
-            "price" => $request->price
+            "name" => 'required|min:5|max:100',
+            "description" => 'required|max:255',
+            //"size" => 'required',
+            "reference" => 'required|min:16|max:16',
+            "status" => 'required',
+            "visibility" => 'required',
+            "price" => 'required'
         ]);
         Product::whereId($id)->update($validatedData);
         return redirect('admin')->with('success', 'Le produit a bien été modifié !');
     }    
+
+    // Route vers la suppression de la page 
+    public function delete($id)
+    {  
+        $products = Product::findOrFail($id);
+        $products->delete();
+        return redirect('admin')->with('success', 'Le produit a bien été supprimé !');
+    }
     
 }
