@@ -30,7 +30,7 @@ Page de modification de produits - We Fashion
             <input type="number" class="form-control" id="floatingPassword" value="{{ $products->price }}" placeholder="Entrez le prix du produit" name="price">
             <label for="floatingPassword">Prix :</label>
         </div>
-        <div class="form-floating form-floating mb-3">
+        {{-- <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="size">
                 <option selected disabled>Etat : {{ $products->size }}</option>
                 <option value="xs">XS</option>
@@ -40,7 +40,7 @@ Page de modification de produits - We Fashion
                 <option value="xl">XL</option>
             </select>
             <label for="floatingSelect">Modifiez l'état du produit</label>
-        </div>
+        </div> --}}
         <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
                 <option selected disabled>Etat : {{ $products->condition }}</option>

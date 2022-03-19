@@ -9,7 +9,7 @@ Page de création de catégories de produits - We Fashion
 @endsection
 
 @section('content')
-<div class="container" style="margin: 25px auto">
+<div class="container" style="margin-bottom: 100px; margin-top: 50px;">
     <form action="{{ route("store_category") }}" method="post" enctype="multipart/form-data" style="height: 355px ;">
         <h1 class="welcome_msg col-10">Créer un nouvelle catégorie</h1>
         <div class="form-floating mb-3">
@@ -40,7 +40,7 @@ Page de création de catégories de produits - We Fashion
         </div>
         
         <div class="d-grid gap-2" style="margin-top: 15px;">
-            <button class="btn btn-primary" type="submit"><span>Créer la catégorie</span></button>
+            <button class="btn btn-primary" type="submit" style="margin-bottom: 15px;"><span>Créer la catégorie</span></button>
         </div>
 </form>
 </div>

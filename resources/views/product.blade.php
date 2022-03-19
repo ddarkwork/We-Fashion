@@ -17,7 +17,7 @@ Page Produit - We Fashion
                 <li><h1 class="welcome_msg" style="color: #66eb9a; text-decoration: underline;">{{ $product->name }}</h1></li>
                 <li>Prix : {{$product->price}}</li>
                 <li>Description : {{$product->description}}</li>
-                <li>Taille : {{$product->size}}</li>
+                {{-- <li>Taille : {{$product->size}}</li> --}}
                 <li>Offre : {{$product->condition}}</li>
                 <li>Référence : {{$product->reference}}</li>
             </ul>

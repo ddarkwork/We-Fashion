@@ -18,20 +18,7 @@ class ProductController extends Controller
             "index",
             "sold",
             "showSex",
-            "create_product",
-            "products",
-            "product",
-            "store_product",
-            "category",
-            "create_category",
-            "store_category",
-            "edit_category",
-            "update_category",
-            "delete_category",
-            "admin",
-            "edit_product",
-            "update",
-            "delete"
+            "product"
         ]);
     }
 
@@ -69,7 +56,7 @@ class ProductController extends Controller
 
     // Page d'administration
     public function admin() {
-        $products = DB::table('products')->orderBy('name', 'asc')->paginate(6);
+        $products = DB::table('products')->orderBy('name', 'asc')->paginate(15);
         return view("dashboard", compact("products"));
     }
 

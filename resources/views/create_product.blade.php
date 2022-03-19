@@ -29,7 +29,7 @@ Page de création de produits - We Fashion
             <input type="number" step="0.01" class="form-control" id="floatingPassword" placeholder="Entrez le prix du produit" name="price">
             <label for="floatingPassword">Entrez le prix du produit</label>
         </div>
-        <div class="form-floating form-floating mb-3">
+        {{-- <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="size">
                 <option selected disabled>Cliquez pour sélectionner la taille du produit</option>
                 <option value="xs">XS</option>
@@ -39,7 +39,7 @@ Page de création de produits - We Fashion
                 <option value="xl">XL</option>
             </select>
             <label for="floatingSelect">Sélectionnez l'état du produit</label>
-        </div>
+        </div> --}}
         <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
                 <option selected disabled>Cliquez pour sélectionner l'état du produit</option>
