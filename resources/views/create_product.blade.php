@@ -26,7 +26,7 @@ Page de création de produits - We Fashion
             <label for="floatingPassword">Entrez la référence du produit</label>
         </div>
         <div class="form-floating form-floating mb-3">
-            <input type="number" class="form-control" id="floatingPassword" placeholder="Entrez le prix du produit" name="price">
+            <input type="number" step="0.01" class="form-control" id="floatingPassword" placeholder="Entrez le prix du produit" name="price">
             <label for="floatingPassword">Entrez le prix du produit</label>
         </div>
         <div class="form-floating form-floating mb-3">
@@ -46,7 +46,7 @@ Page de création de produits - We Fashion
             <label for="floatingSelect">Sélectionnez la visibilité du produit</label>
         </div>
         
-        <input type="file" class="form-control" id="floatingPassword">
+        {{-- <input type="file" class="form-control" id="floatingPassword"> --}}
         
         <div class="d-grid gap-2" style="margin-top: 15px;">
             <button class="btn btn-primary" type="submit"><span>Créer le produit</span></button>

@@ -65,24 +65,36 @@ class ProductController extends Controller
 
     public function create_product()
     {
-        $products = Product::all();
-        return view("create_product", compact("products"));
+        return view("create_product");
     }
+
+    // public function store_product(Request $request)
+    // {
+    //     $validatedData = $request->validate([
+    //         "name" => 'required|min:5|max:100',
+    //         "description" => 'required|max:255',
+    //         //"size" => 'required',
+    //         "reference" => 'required|min:16|max:16',
+    //         "status" => 'required',
+    //         "visibility" => 'required',
+    //         "price" => 'required'
+    //     ]);
+    //     $products = Product::create($validatedData);
+   
+    //     return redirect('admin')->with('success', 'Le produit a bien été enregistré !');
+    // }
+
+    // public function store_product(Request $request)
+    // {
+    //     $product = Product::create($request->all());
+    //     return $product;
+    // }
 
     public function store_product(Request $request)
     {
-        $validatedData = $request->validate([
-            "name" => 'required|min:5|max:100',
-            "description" => 'required|max:255',
-            //"size" => 'required',
-            "reference" => 'required|min:16|max:16',
-            "status" => 'required',
-            "visibility" => 'required',
-            "price" => 'required'
-        ]);
-        $products = Product::create($validatedData);
-   
-        return redirect('admin')->with('success', 'Le produit a bien été enregistré !');
+        $product = Product::create($request->all());
+        dd($product);
+        return redirect('admin')->with('success', 'Le produit a bien été enregistré');
     }
 
     public function create_category() 
@@ -96,22 +108,6 @@ class ProductController extends Controller
         return view('edit', compact('products'));
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $validatedData = $request->validate([
-    //         "name" => 'required|min:5|max:100',
-    //         "description" => 'required|max:255',
-    //         //"size" => 'required',
-    //         "reference" => 'required|min:16|max:16',
-    //         "status" => 'required',
-    //         "visibility" => 'required',
-    //         "price" => 'required'
-    //     ]);
-    //     Product::whereId($id)->update($validatedData);
-    //     return redirect('admin')->with('success', 'Le produit a bien été modifié !');
-    // }   
-    
-    
     public function update(Request $request, $id)
     {
         $products = Product::findOrFail($id);

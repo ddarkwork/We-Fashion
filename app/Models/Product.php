@@ -12,7 +12,7 @@ class Product extends Model
     use HasFactory;
 
     // Autoriser le passage de données 
-    protected $fillable = ["name", "description", "price", "size", "reference", "status", "visibility"];
+    protected $fillable = ["name", "description", "price", "size", "reference", "condition", "visibility"];
 
     // Lier les tables Products et Categories
     public function categories() 
