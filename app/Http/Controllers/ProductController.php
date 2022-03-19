@@ -39,7 +39,7 @@ class ProductController extends Controller
     // Rubriques soldes
     public function sold() 
     {
-        $products = DB::table('products')->where("condition", "=", "sold" )->orderBy('created_at', 'desc')->paginate(6);
+        $products = DB::table('products')->where([["condition", "=", "sold"], ["visibility", "=", "publié"]])->orderBy('created_at', 'desc')->paginate(6);
         return view("sold", ['products' => $products]);
     }
 
