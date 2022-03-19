@@ -31,7 +31,7 @@ Tableau de bord - We Fashion
                     <tr>
                         <td>Nom</td>
                         <th>Description</th>
-                        {{-- <th>Taille</th> --}}
+                        <th>Taille</th>
                         <th>Référence</th>
                         <th>Statut</th>
                         <th>Visibilité</th>
@@ -44,7 +44,7 @@ Tableau de bord - We Fashion
                     <tr>
                         <td>{{$product->name}}</td>
                         <td>{{$product->description}}</td>
-                        {{-- <td>{{$product->size}}</td> --}}
+                        <td>{{$product->size}}</td>
                         <td>{{$product->reference}}</td>
                         <td>{{$product->condition}}</td>
                         <td>{{$product->visibility}}</td>

@@ -17,7 +17,6 @@
         <ul>
           <li><h1 class="welcome_msg"><a href="{{ route("product", $product->id) }}" style="color: #66eb9a; text-decoration: underline;">{{$product->name}}</a></h1></li>
           <li>{{$product->price}}</li>
-          {{-- <li>{{$product->description}}</li> --}}
           <li>{{$product->visibility}}</li>
           <li>{{$product->condition}}</li>
           <li>{{$product->reference}}</li>

@@ -30,6 +30,17 @@ Page de création de produits - We Fashion
             <label for="floatingPassword">Entrez le prix du produit</label>
         </div>
         <div class="form-floating form-floating mb-3">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="size">
+                <option selected disabled>Cliquez pour sélectionner la taille du produit</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="floatingSelect">Sélectionnez l'état du produit</label>
+        </div>
+        <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
                 <option selected disabled>Cliquez pour sélectionner l'état du produit</option>
                 <option value="sold">Sold</option>
@@ -46,7 +57,7 @@ Page de création de produits - We Fashion
             <label for="floatingSelect">Sélectionnez la visibilité du produit</label>
         </div>
         
-        {{-- <input type="file" class="form-control" id="floatingPassword"> --}}
+        <input type="file" class="form-control" id="floatingPassword">
         
         <div class="d-grid gap-2" style="margin-top: 15px;">
             <button class="btn btn-primary" type="submit"><span>Créer le produit</span></button>

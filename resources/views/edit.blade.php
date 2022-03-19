@@ -31,6 +31,17 @@ Page de modification de produits - We Fashion
             <label for="floatingPassword">Prix :</label>
         </div>
         <div class="form-floating form-floating mb-3">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="size">
+                <option selected disabled>Etat : {{ $products->size }}</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+            </select>
+            <label for="floatingSelect">Modifiez l'état du produit</label>
+        </div>
+        <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
                 <option selected disabled>Etat : {{ $products->condition }}</option>
                 <option value="sold">Sold</option>
