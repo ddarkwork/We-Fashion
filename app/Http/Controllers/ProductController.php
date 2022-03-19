@@ -19,6 +19,7 @@ class ProductController extends Controller
             "showSex",
             "create_product",
             "products",
+            "product",
             "store_product",
             "create_category",
             "admin",
@@ -30,8 +31,15 @@ class ProductController extends Controller
 
     public function index() 
     {
-        $product = Product::paginate(6);
-        return view('home', ['products' => $product]);
+        $products = DB::table('products')->where("visibility", "=", "publié" )->paginate(6);
+        //$product = Product::paginate(6);
+        return view('home', ['products' => $products]);
+    }
+
+    public function product($id) 
+    {
+        $product = Product::findOrFail($id);
+        return view('product', ['product' => $product]);
     }
 
     public function sold() 

@@ -17,12 +17,9 @@ Page d'accueil - We Fashion
       @foreach($products as $product)
       <div class="col-4">
         <ul>
-          <li>{{$product->name}}</li>
-          <li>{{$product->price}}</li>
-          {{-- <li>{{$product->description}}</li> --}}
-          <li>{{$product->visibility}}</li>
-          <li>{{$product->condition}}</li>
-          <li>{{$product->reference}}</li>
+          <li><h1 class="welcome_msg"><a href="{{ route("product", $product->id) }}" style="color: #66eb9a; text-decoration: underline;">{{$product->name}}</a></h1></li>
+          <li>Prix : {{$product->price}}</li>
+          <li>Référence : {{$product->reference}}</li>
         </ul>
       </div>
       @endforeach

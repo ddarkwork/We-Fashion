@@ -89,6 +89,10 @@ body {
 .btn a span:hover {
     color: white;
 }
+
+h1 .welcome_msg > a {
+    color: #66eb9a;
+}
 /* END CSS BODY */
 
 /* BEGIN CSS FOOTER */
