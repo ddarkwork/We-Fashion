@@ -56,11 +56,20 @@ Route::get("category", [ProductController::class, "category"]) -> name("category
 // Page de création de catégorie
 Route::get("create_category", [ProductController::class, "create_category"]) -> name("create_category");
 
-// Page de création de catégorie
-Route::get("store_product", [ProductController::class, "store_product"]) -> name("store_product");
-
 // Enregistrement d'une catégorie
 Route::post("store_category", [ProductController::class, "store_category"]) -> name("store_category");
+
+// Modifier d'une catégorie
+Route::get("edit_category/{id}", [ProductController::class, "edit_category"]) -> name("edit_category");
+
+// Page de modification de catégorie
+Route::post("update_category/{id}", [ProductController::class, "update_category"]) -> name("update_category");
+
+// Suppression d'une catégorie
+Route::get("delete_category/{id}", [ProductController::class, "delete_category"]) -> name("delete_category");
+
+// Page de création de catégorie
+Route::get("store_product", [ProductController::class, "store_product"]) -> name("store_product");
 
 // Modification d'un produit
 Route::get("edit_product/{id}", [ProductController::class, "edit_product"]) -> name("edit_product");

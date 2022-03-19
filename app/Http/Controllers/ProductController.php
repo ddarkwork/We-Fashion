@@ -23,7 +23,10 @@ class ProductController extends Controller
             "store_product",
             "category",
             "create_category",
-            "store_product",
+            "store_category",
+            "edit_category",
+            "update_category",
+            "delete_category",
             "admin",
             "edit_product",
             "update",
@@ -116,11 +119,35 @@ class ProductController extends Controller
         $categories = DB::table('categories')->orderBy('name', 'asc')->paginate(6);
         return view("category", compact("categories"));
     }
+    
     // Enregistrer une nouvelle catégorie
     public function store_category(Request $request)
     {
         $category = Category::create($request->all());
-        return redirect('admin')->with('success', 'Le produit a bien été enregistré');
+        return redirect('category')->with('success', 'Le produit a bien été enregistré');
+    }
+
+    // Page de modification d'une catégorie
+    public function edit_category($id)
+    {
+        $categories = Category::findOrFail($id);
+        return view("edit_category", compact('categories'));
+    }
+
+    // Mise à jour d'une catégorie
+    public function update_category(Request $request, $id)
+    {
+        $categories = Category::findOrFail($id);
+        $categories->update($request->all());
+        return redirect('category');
+    }
+
+    // Supprimer une catégorie
+    public function delete_category($id)
+    {  
+        $categories = Category::findOrFail($id);
+        $categories->delete();
+        return redirect('category')->with('success', 'La catégorie a bien été supprimée !');
     }
     
 }

@@ -11,10 +11,10 @@ Page de création de catégories de produits - We Fashion
 @section('content')
 <div class="container">
     <div class="row">
-        <h1 class="welcome_msg col-10">Tableau de bord</h1>
+        <h1 class="welcome_msg col-10">liste des catégories</h1>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button class="btn me-md-2" type="button">
-                <a href="{{ route("create_product") }}">
+                <a href="{{ route("create_category") }}">
                     <span>Créer une nouvelle catégorie</span>
                 </a>
             </button>
@@ -46,8 +46,8 @@ Page de création de catégories de produits - We Fashion
                         <td>{{$category->sex}}</td>
                         <td>{{$category->condition}}</td>
                         <td>
-                            <a class="btn btn-default btn-sm" style="margin-bottom: 10px;" href="{{ route("edit_product", $category->id)}}"> <span> Editer </span> </a>
-                            <a class="btn btn-default btn-sm" href="{{ route("delete", $category->id) }}"> <span> Supprimer </span> </a> 
+                            <a class="btn btn-default btn-sm" style="margin-bottom: 10px;" href="{{ route("edit_category", $category->id)}}"> <span> Editer </span> </a>
+                            <a class="btn btn-default btn-sm" href="{{ route("delete_category", $category->id) }}"> <span> Supprimer </span> </a> 
                         </td>
                     </tr>
                 </tbody>
