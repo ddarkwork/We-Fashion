@@ -31,7 +31,7 @@ class ProductController extends Controller
 
     public function index() 
     {
-        $products = DB::table('products')->where("visibility", "=", "publié" )->paginate(6);
+        $products = DB::table('products')->where("visibility", "=", "publié" )->orderBy('created_at', 'desc')->paginate(6);
         //$product = Product::paginate(6);
         return view('home', ['products' => $products]);
     }
@@ -44,7 +44,7 @@ class ProductController extends Controller
 
     public function sold() 
     {
-        $products = DB::table('products')->where("condition", "=", "sold" )->paginate(6);
+        $products = DB::table('products')->where("condition", "=", "sold" )->orderBy('created_at', 'desc')->paginate(6);
         return view("sold", ['products' => $products]);
     }
 
