@@ -51,7 +51,7 @@ Route::post("store_category", [ProductController::class, "store_category"]) -> n
 
 Route::get("edit_product/{id}", [ProductController::class, "edit_product"]) -> name("edit_product");
 
-Route::patch("update/{id}", [ProductController::class, "update"]) -> name("update");
+Route::post("update/{id}", [ProductController::class, "update"]) -> name("update");
 
 Route::get("delete/{id}", [ProductController::class, "delete"]) -> name("delete");
 

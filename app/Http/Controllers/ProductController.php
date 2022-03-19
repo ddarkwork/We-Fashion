@@ -96,20 +96,28 @@ class ProductController extends Controller
         return view('edit', compact('products'));
     }
 
+    // public function update(Request $request, $id)
+    // {
+    //     $validatedData = $request->validate([
+    //         "name" => 'required|min:5|max:100',
+    //         "description" => 'required|max:255',
+    //         //"size" => 'required',
+    //         "reference" => 'required|min:16|max:16',
+    //         "status" => 'required',
+    //         "visibility" => 'required',
+    //         "price" => 'required'
+    //     ]);
+    //     Product::whereId($id)->update($validatedData);
+    //     return redirect('admin')->with('success', 'Le produit a bien été modifié !');
+    // }   
+    
+    
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            "name" => 'required|min:5|max:100',
-            "description" => 'required|max:255',
-            //"size" => 'required',
-            "reference" => 'required|min:16|max:16',
-            "status" => 'required',
-            "visibility" => 'required',
-            "price" => 'required'
-        ]);
-        Product::whereId($id)->update($validatedData);
-        return redirect('admin')->with('success', 'Le produit a bien été modifié !');
-    }    
+        $products = Product::findOrFail($id);
+        $products->update($request->all());
+        return redirect('admin');
+    }
 
     public function delete($id)
     {  

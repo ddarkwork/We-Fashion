@@ -19,7 +19,7 @@ Page de modification de produits - We Fashion
             <label for="floatingInput">Nom :</label>
         </div>
         <div class="form-floating" style="margin-bottom: 15px">
-            <textarea class="form-control" placeholder="Entrez la description du produit" id="floatingTextarea2" style="height: 100px" name="description"></textarea>
+            <textarea class="form-control" placeholder="Entrez la description du produit" style="height: 100px" name="description">{{ $products->description }}</textarea>
             <label for="floatingTextarea2">Description : {{ $products->description }}</label>
         </div>
         <div class="form-floating form-floating mb-3">
