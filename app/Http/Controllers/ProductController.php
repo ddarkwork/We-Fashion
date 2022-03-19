@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-
+    // Utilisation de Breeze pour l'authentification
     public function __construct()
     {
+        // Appliquer l'auth sur toutes les fonctions sauf celles ci-dessous
         $this -> middleware("auth") -> except([
             "index",
             "sold",
