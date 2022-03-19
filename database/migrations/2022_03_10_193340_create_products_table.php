@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('description' , ["XS", "S", "M", "L", "XL"]);
+            $table->string('size' , ["XS", "S", "M", "L", "XL"]);
             $table->text('visibility');
             $table->enum('condition', ['sold', 'standard']);
             $table->string('reference');
