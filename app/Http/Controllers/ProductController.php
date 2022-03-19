@@ -78,17 +78,17 @@ class ProductController extends Controller
         return view("create_product");
     }
 
+    // Page de création d'une nouvelle catégorie
+    public function create_category() 
+    {
+        return view("create_category");
+    }
+
     // Enregistrer un nouveau produit
     public function store_product(Request $request)
     {
         $product = Product::create($request->all());
         return redirect('admin')->with('success', 'Le produit a bien été enregistré');
-    }
-
-    // Page de création d'une nouvelle catégorie
-    public function create_category() 
-    {
-        return view("create_category");
     }
 
     // Page de modification d'un produit
@@ -139,6 +139,7 @@ class ProductController extends Controller
     {
         $categories = Category::findOrFail($id);
         $categories->update($request->all());
+        dd($categories);
         return redirect('category');
     }
 

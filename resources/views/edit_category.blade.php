@@ -19,11 +19,11 @@ Page de modification de catégorie - We Fashion
             <label for="floatingInput">Nom :</label>
         </div>
         <div class="form-floating" style="margin-bottom: 15px">
-            <textarea class="form-control" placeholder="Entrez la description du produit" style="height: 100px" name="description">{{ $categories->description }}</textarea>
+            <textarea class="form-control" placeholder="Entrez la description de la catégorie" style="height: 100px" name="description">{{ $categories->description }}</textarea>
             <label for="floatingTextarea2">Description : {{ $categories->description }}</label>
         </div>
         <div class="form-floating form-floating mb-3">
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="sex">
                 <option selected disabled>Etat : {{ $categories->sex }}</option>
                 <option value="homme">Homme</option>
                 <option value="femme">Femme</option>
@@ -39,10 +39,10 @@ Page de modification de catégorie - We Fashion
             <label for="floatingSelect">Modifiez l'état de la catégorie</label>
         </div>
         
-        <input type="file" class="form-control" id="floatingPassword">
+        {{-- <input type="file" class="form-control" id="floatingPassword"> --}}
         
         <div class="d-grid gap-2" style="margin-top: 15px;">
-            <button class="btn btn-primary" type="submit"><span>Modifier le produit</span></button>
+            <button class="btn btn-primary" type="submit"><span>Modifier la catégorie</span></button>
         </div>
     </form>
 </div>
