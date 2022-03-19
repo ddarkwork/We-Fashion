@@ -17,8 +17,6 @@ class ProductController extends Controller
             "index",
             "sold",
             "showSex",
-            //"men",
-            //"women",
             "create_product",
             "products",
             "store_product",
@@ -53,19 +51,16 @@ class ProductController extends Controller
     }
 
     public function admin() {
-        // $products = Product::orderBy("name")->get();
         $products = DB::table('products')->orderBy('name', 'asc')->paginate(6);
         return view("dashboard", compact("products"));
     }
 
-    // Route page création de produit
     public function create_product()
     {
         $products = Product::all();
         return view("create_product", compact("products"));
     }
 
-    // Route page traitement produit
     public function store_product(Request $request)
     {
         $validatedData = $request->validate([
@@ -82,20 +77,17 @@ class ProductController extends Controller
         return redirect('admin')->with('success', 'Le produit a bien été enregistré !');
     }
 
-    // Route page création de catégorie
     public function create_category() 
     {
         return view("create_category");
     }
 
-    // Route modification de produit
     public function edit_product($id)
     {
         $products = Product::findOrFail($id);
         return view('edit', compact('products'));
     }
 
-    // Route update produit
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -111,7 +103,6 @@ class ProductController extends Controller
         return redirect('admin')->with('success', 'Le produit a bien été modifié !');
     }    
 
-    // Route vers la suppression de la page 
     public function delete($id)
     {  
         $products = Product::findOrFail($id);

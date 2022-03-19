@@ -13,7 +13,7 @@ Page de modification de produits - We Fashion
     <h1 class="welcome_msg col-10">Modifier le produit</h1>
     <form action="{{ route("update", $products->id) }}" method="post" enctype="multipart/form-data">
         @csrf
-        N.B: Cliquez pour modifier le champ <br>
+        N.B : Cliquez pour modifier le champ <br>
         <div class="form-floating mb-3 form">
             <input type="text" class="form-control" id="floatingInput" value="{{ $products->name }}" placeholder="Entrez le nom du produit" name="name">
             <label for="floatingInput">Nom :</label>
@@ -47,7 +47,7 @@ Page de modification de produits - We Fashion
             <label for="floatingSelect">Modifiez la visibilité du produit</label>
         </div>
         
-        {{-- <input type="file" class="form-control" id="floatingPassword"> --}}
+        <input type="file" class="form-control" id="floatingPassword">
         
         <div class="d-grid gap-2" style="margin-top: 15px;">
             <button class="btn btn-primary" type="submit"><span>Modifier le produit</span></button>
