@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
+            $table->string('description' , ["XS", "S", "M", "L", "XL"]);
             $table->text('visibility');
-            $table->string('condition');
+            $table->enum('condition', ['sold', 'standard']);
             $table->string('reference');
             $table->decimal('price' , 5, 2)->nullable();
             $table->timestamps();

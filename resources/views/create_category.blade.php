@@ -33,8 +33,8 @@ Page de création de catégories de produits - We Fashion
         <div class="form-floating form-floating mb-3">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="condition">
                 <option selected disabled>Cliquez pour sélectionner le statut de la catégorie</option>
-              <option value="sold">Sold</option>
-              <option value="normal">Normal</option>
+              <option value="sold">Solde</option>
+              <option value="standard">Standard</option>
             </select>
             <label for="floatingSelect">Sélectionnez le sexe concerné</label>
         </div>
